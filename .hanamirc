@@ -1,0 +1,4 @@
+project=ohanami
+architecture=container
+test=minitest
+template=erb
