@@ -14,11 +14,8 @@ module Web::Controllers::Users
 
     def call(params)
       user = UserRepository.new.find_by_email! params.get(:user, :email)
-      if user.valid_password?(params.get(:user, :password))
-        @user = user
-      else
-        halt 400
-      end
+      halt 400 unless user.valid_password?(params.get(:user, :password))
+      @user = user
     rescue Ohanami::RecordNotFoundException => _
       halt 404
     end

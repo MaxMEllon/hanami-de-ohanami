@@ -15,7 +15,10 @@ module Web::Controllers::Users
 
     def call(_)
       halt 400 unless valid_params?
-      @user = UserRepository.new.create(user_params)
+      repo = UserRepository.new
+      halt 400 if repo.find_by_email(params.get(:user, :email))
+      p user_params
+      @user = repo.create(user_params)
     end
 
     private
