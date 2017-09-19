@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'hanami',       '~> 1.0'
 gem 'hanami-model', '~> 1.0'
-gem 'jsonapi-hanami'
+gem 'hanami-serializer', git: 'https://github.com/davydovanton/hanami-serializer'
 gem 'lotus-view'
 gem 'rake'
 gem 'slim'
@@ -10,8 +10,6 @@ gem 'sqlite3'
 
 group :development do
   gem 'shotgun'
-  gem 'pry'
-  gem 'pry-byebug'
 end
 
 group :test, :development do
@@ -25,5 +23,5 @@ group :test do
 end
 
 group :production do
-  # gem 'puma'
+  gem 'puma'
 end

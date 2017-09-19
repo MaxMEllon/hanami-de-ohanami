@@ -1,5 +1,5 @@
 module Web::Views::Users
-  class Create
+  class SignIn
     include Web::View
 
     def render
