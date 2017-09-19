@@ -1,7 +1,5 @@
 require_relative './base_serializer.rb'
 
 class UserSerializer < BaseSerializer
-  attribute :id
-  attribute :email
-  attribute :token
+  attribute :id, :email, :token
 end

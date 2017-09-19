@@ -14,8 +14,10 @@ class BaseSerializer
     root.empty? ? result.to_json : { root => result }.to_json
   end
 
-  def self.attribute(sym)
+  def self.attribute(*syms)
     @@keys ||= []
-    @@keys.push sym
+    syms.each do |sym|
+      @@keys.push sym
+    end
   end
 end
