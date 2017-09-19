@@ -1,1 +1,1 @@
-post '/users/new', to: 'users#create'
+post '/users/sign_up', to: 'users#create'
