@@ -1,5 +1,3 @@
-require_relative './_mixin/json_renderer.rb'
-
 class User < Hanami::Entity
   include Entity::JSONRenderer
 

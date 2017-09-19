@@ -1,13 +1,8 @@
 # frozen_string_literal: true
 
-require_relative '../_mixin/params_binder.rb'
-
 module Web::Controllers::Users
   class Create
     include Web::Action
-    include Web::Controllers::Mixin::ParamsBinder
-
-    before :bind_params
     expose :user
 
     params do
@@ -18,21 +13,20 @@ module Web::Controllers::Users
       end
     end
 
-    def call(params)
+    def call(_)
       halt 400 unless valid_params?
-      repo = UserRepository.new
-      @user = repo.create(user_params)
+      @user = UserRepository.new.create(user_params)
     end
 
     private
 
     def valid_params?
-     @params.valid? && valid_password?
+      params.valid? && valid_password?
     end
 
     def valid_password?
-      password = @params.get(:user, :password)
-      password_confirmation = @params.get(:user, :password_confirmation)
+      password = params.get(:user, :password)
+      password_confirmation = params.get(:user, :password_confirmation)
       password == password_confirmation
     end
 
