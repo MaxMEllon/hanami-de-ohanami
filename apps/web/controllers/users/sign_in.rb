@@ -17,9 +17,9 @@ module Web::Controllers::Users
       if user.valid_password?(params.get(:user, :password))
         @user = user
       else
-        halt 401
+        halt 400
       end
-    rescue => _
+    rescue Ohanami::RecordNotFoundException => _
       halt 404
     end
   end
