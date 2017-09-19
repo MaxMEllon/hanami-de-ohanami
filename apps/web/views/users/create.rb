@@ -3,9 +3,7 @@ module Web::Views::Users
     include Web::View
 
     def render
-      raw(
-        { user: user.to_h }.to_json
-      )
+      raw(user.json(root: :user))
     end
   end
 end
