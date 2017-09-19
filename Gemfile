@@ -13,8 +13,10 @@ group :development do
 end
 
 group :test, :development do
-  gem 'rubocop'
   gem 'dotenv', '~> 2.0'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'rubocop'
 end
 
 group :test do
