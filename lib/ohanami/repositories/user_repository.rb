@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UserRepository < Hanami::Repository
   def find_by_email!(email)
     user = users.where(email: email).first

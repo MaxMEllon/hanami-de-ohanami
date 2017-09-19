@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Web::Controllers::Users
   class SignIn
     include Web::Action

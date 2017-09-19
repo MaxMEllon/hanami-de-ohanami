@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Entity
   module JSONRenderer
     def json(opt = {})
