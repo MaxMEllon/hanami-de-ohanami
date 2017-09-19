@@ -12,11 +12,10 @@ This application is tutorial the hanami of WAF.
 
 ```
 {
-  {
-  user<Schema>: {
-    email<String>: サインイン時に利用するメールアドレス
-    password<String>: サインイン時に利用するパスワード
-    password_confirmation<String>: パスワード確認用
+  user: [Schema] {
+    email: [String] サインイン時に利用するメールアドレス
+    password: [String] サインイン時に利用するパスワード
+    password_confirmation: [String] パスワード確認用
   }
 }
 ```
@@ -25,10 +24,10 @@ This application is tutorial the hanami of WAF.
 
 ```
 {
-  user<Schema>: {
-    id<Integer>: id
-    email<String>: メールアドレス
-    token<String>: 認証に利用するトーケン
+  user: [Schema] {
+    id: [Integer] id
+    email: [String] メールアドレス
+    token: [String] 認証に利用するトーケン
   }
 }
 ```
