@@ -49,6 +49,20 @@ This application is tutorial the hanami of WAF.
 }
 ```
 
+### /users/sign_out => Web::users#sign_out
+
+#### request body
+
+```
+{
+  token: [String] JSON web token
+}
+```
+
+#### response body
+
+None.
+
 ## LICENSE
 
 CC0
