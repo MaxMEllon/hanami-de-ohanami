@@ -8,10 +8,14 @@ class BaseSerializer
   def send_json(opt = {})
     result = {}
     @@keys.each do |key|
-      begin
+      if respond_to? key
         value = send(key)
-      rescue
-        value = @obj.send(key)
+      else
+        begin
+          value = @obj.send(key)
+        rescue
+          $!
+        end
       end
       result = result.merge(key => value) unless value.nil?
     end
