@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class User < Hanami::Entity
-  # include Entity::JSONRenderer
-
   attributes do
     attribute :id, Types::Int
     attribute :email, Types::String
@@ -11,6 +9,6 @@ class User < Hanami::Entity
   end
 
   def valid_password?(password)
-    self.password == password
+    self.password == Digest::SHA256.hexdigest(password)
   end
 end

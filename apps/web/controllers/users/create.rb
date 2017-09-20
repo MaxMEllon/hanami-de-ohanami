@@ -17,7 +17,6 @@ module Web::Controllers::Users
       halt 400 unless valid_params?
       repo = UserRepository.new
       halt 400 if repo.find_by_email(params.get(:user, :email))
-      p user_params
       @user = repo.create(user_params)
     end
 
@@ -36,7 +35,7 @@ module Web::Controllers::Users
     def user_params
       {
         email: params.get(:user, :email),
-        password: params.get(:user, :password),
+        password: Digest::SHA256.hexdigest(params.get(:user, :password)),
         token: SecureRandom.urlsafe_base64(nil, false)
       }
     end
