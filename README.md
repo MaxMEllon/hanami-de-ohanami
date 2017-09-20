@@ -24,11 +24,7 @@ This application is tutorial the hanami of WAF.
 
 ```
 {
-  user: [Schema] {
-    id: [Integer] id
-    email: [String] メールアドレス
-    token: [String] 認証に利用するトーケン
-  }
+  token: [String] JSON web token
 }
 ```
 
@@ -49,11 +45,7 @@ This application is tutorial the hanami of WAF.
 
 ```
 {
-  user: [Schema] {
-    id: [Integer] id
-    email: [String] メールアドレス
-    token: [String] 認証に利用するトーケン
-  }
+  token: [String] JSON web token
 }
 ```
 

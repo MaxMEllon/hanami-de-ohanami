@@ -7,6 +7,7 @@ gem 'lotus-view'
 gem 'rake'
 gem 'slim'
 gem 'sqlite3'
+gem 'jwt'
 
 group :development do
   gem 'shotgun'
